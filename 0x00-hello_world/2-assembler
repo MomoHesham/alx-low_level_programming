@@ -1,2 +1,2 @@
 #!/bin/bash
-gss -S $CFILE > ${CFILE::-2}".s"
+gss -S $CFILE > ${CFILE}".s"
