@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 /**
- *Description: 'print size'
+ * main - entry point
+ *
+ *Description: 'print size function'
  *
  *
  * Return: always 0
