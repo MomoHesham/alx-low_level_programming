@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define LARGEST 10000000000
 
 /**
  * main - entry point
@@ -7,26 +8,30 @@
 
 int main(void)
 {
-	int i = 0;
-	long a1 = 1, a2 = 2;
+	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2;
+	unsigned long int hold1, hold2, hold3;
+	int count;
 
-	while (i < 98)
+	printf("%lu, %lu, ", bk1, bk2);
+	for (count = 2; count < 98; count++)
 	{
-		if (i == 0)
+		if (bk1 + bk2 > LARGEST || fr2 > 0 || fr1 > 0)
 		{
-			printf("%ld", a1);
-		}
-		else if (i == 1)
-		{
-			printf(", %ld", a2);
+			hold1 = (bk1 + bk2) / LARGEST;
+			hold2 = (bk1 + bk2) % LARGEST;
+			hold3 = fr1 + fr2 + hold1;
+			fr1 = fr2, fr2 = hold3;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu%010lu", fr2, bk2);
 		}
 		else
 		{
-			a2 += a1;
-			a1 = a2 - a1;
-			printf(", %ld", a2);
+			hold2 = bk1 + bk2;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu", bk2);
 		}
-		i++;
+		if (count != 97)
+			printf(", ");
 	}
 	printf("\n");
 	return (0);
