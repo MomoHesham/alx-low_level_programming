@@ -7,18 +7,25 @@
 
 int main(void)
 {
-	long int a1, a2, a3;
-	int i;
+	long j, k;
+	int i = 0;
 
-	a1 = 1;
-	a2 = 2;
-	printf("%ld, %ld, ", a1, a2);
-	for (i = 0; i < 48; i++)
+	j = 1;
+	k = 2;
+
+	while (i < 50)
 	{
-		a3 = a1 + a2;
-		printf("%ld, ", a3);
-		a1 = a2;
-		a2 = a3;
+		if (i == 0)
+			printf("%ld", j);
+		else if (i == 1)
+			printf(", %ld", k);
+		else
+		{
+			k += j;
+			j = k - j;
+			printf(", %ld", k);
+		}
+		i++;
 	}
 	printf("\n");
 	return (0);
