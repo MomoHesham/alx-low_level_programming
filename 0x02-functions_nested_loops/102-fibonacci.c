@@ -7,15 +7,16 @@
 
 int main(void)
 {
-	int a1, a2, a3, i;
+	long int a1, a2, a3;
+	int i;
 
 	a1 = 1;
 	a2 = 2;
-	printf("%d, %d, ", a1, a2);
-	for (i = 0; i <= 50; i++)
+	printf("%ld, %ld, ", a1, a2);
+	for (i = 0; i < 48; i++)
 	{
 		a3 = a1 + a2;
-		printf("%d, ", a3);
+		printf("%ld, ", a3);
 		a1 = a2;
 		a2 = a3;
 	}
