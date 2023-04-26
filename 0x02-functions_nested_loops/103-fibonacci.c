@@ -12,6 +12,7 @@ int main(void)
 
 	while (j + k < 4000000)
 	{
+		k += j;
 		if (k % 2 == 0)
 			sum += k;
 		j = k - j;
