@@ -1,8 +1,8 @@
-#include <stdio.h>
 #include <string.h>
 #include "main.h"
 
-/** _strncat - concatenates two string
+/**
+ * _strncat - concatenates two string.
  * @dest: array one
  * @src: array two
  * @n: bytes from src
