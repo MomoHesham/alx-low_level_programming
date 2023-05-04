@@ -18,7 +18,7 @@ char *cap_string(char *c)
 		{
 			c[i] -= 32;
 		}
-		else
+		else if (c[i] == ' ')
 		{
 			spacecounter++;
 		}
