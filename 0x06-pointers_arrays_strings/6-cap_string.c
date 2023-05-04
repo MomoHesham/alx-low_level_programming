@@ -8,21 +8,28 @@
 
 char *cap_string(char *c)
 {
-	int i;
-	int spacecounter = 0;
+	int conversion, index, count;
 
-	i = 0;
-	while (c[i] != '\0')
+	char chars[] = {' ', ',', ';', '.', '!', '?',
+		'"', '(', ')', '{', '}', '\t', '\n', '\0'};
+
+	conversion = 32;
+
+	for (index = 0; c[index] != '\0'; index++)
 	{
-		if ((spacecounter % 2 == 1) && c[i] >= 97 && c[i] <= 122)
+		if (c[index] >= 'a' && c[index] <= 'z')
 		{
-			c[i] -= 32;
+			c[index] -= conversion;
 		}
-		else if (c[i] == ' ')
+		conversion = 0;
+		for (count = 0; chars[count] != '\0'; count++)
 		{
-			spacecounter++;
+			if (chars[count] == c[index])
+			{
+				conversion = 32;
+				break;
+			}
 		}
-		i++;
 	}
 	return (c);
 }
