@@ -9,8 +9,6 @@
 
 void set_string(char **s, char *to)
 {
-	if (*s != NULL)
-	{
-		*to = **s;
-	}
+	if (to != NULL)
+		*s = to;
 }
