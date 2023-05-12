@@ -10,8 +10,7 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-<<<<<<< HEAD
-	unsigned int count = 0,	i;
+	unsigned int count = 0,	i, j;
 
 	for (i = 0; i < strlen(accept); i++)
 	{
@@ -21,8 +20,6 @@ unsigned int _strspn(char *s, char *accept)
 			count++;
 	}
 	return (count);
-=======
-	int i, j, count = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -38,5 +35,4 @@ unsigned int _strspn(char *s, char *accept)
 			return (count);
 	}
 		return (count);
->>>>>>> 83f5093ecb5fa99b326daa6d64af659d37995952
 }
