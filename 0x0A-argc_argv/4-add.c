@@ -11,19 +11,19 @@
 
 int main(int argc, char *argv[])
 {
-	int i, add = 0;
+	int add = 0;
+	char *c;
 
-	for (i = 1; i < argc; i++)
+	while (--argc)
 	{
-		if (isdigit(*argv[i]))
+		for (c = argv[argc]; *c; c++)
 		{
-			add += atoi(argv[i]);
+			if (*c < '0' || *c > '9')
+			{
+				return (printf("Error\n"), 1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		add += atoi(argv[argc]);
 	}
 	printf("%d\n", add);
 	return (0);
