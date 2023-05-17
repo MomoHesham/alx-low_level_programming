@@ -14,11 +14,19 @@ char *_strdup(char *str)
 	size_t size = strlen(str) + 1;
 	char *s = malloc(size);
 
-	if (size == 0 || s == NULL)
+	if (s == NULL)
+	{
+		printf("failed to allocate memory\n");
 		return (NULL);
+	}
+	if (s == 0)
+	{
+		return (NULL);
+	}
 	if (s != 0)
 	{
 		s = str;
 	}
+	free(s);
 	return (s);
 }
