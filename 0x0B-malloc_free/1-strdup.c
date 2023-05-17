@@ -11,22 +11,30 @@
 
 char *_strdup(char *str)
 {
-	size_t size = strlen(str) + 1;
-	char *s = malloc(size);
+	char *s;
+	unsigned int i = 0;
+	unsigned int j = 0;
+
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
+	while (str[i])
+	{
+		i++;
+	}
+	s = malloc((i + 1) * sizeof(char));
 
 	if (s == NULL)
 	{
-		printf("failed to allocate memory\n");
 		return (NULL);
 	}
-	if (s == 0)
+	while (str[j])
 	{
-		return (NULL);
+		s[j] = str[j];
+		j++;
 	}
-	if (s != 0)
-	{
-		s = str;
-	}
-	free(s);
+	s[j + 1] = 0;
 	return (s);
 }
