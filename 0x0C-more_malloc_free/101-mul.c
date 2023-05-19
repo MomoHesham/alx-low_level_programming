@@ -57,7 +57,8 @@ void print_int(unsigned long int n)
 	unsigned long int divisor = 1, i, resp;
 
 	for (i = 0; n / divisor > 9; i++, divisor *= 10)
-		;
+	;
+
 	for (; divisor >= 1; n %= divisor, divisor /= 10)
 	{
 		resp = n / divisor;
@@ -75,6 +76,7 @@ void print_int(unsigned long int n)
 int main(int argc, char const *argv[])
 {
 	(void)argc;
+
 	if (argc != 3)
 	{
 		_puts("Error\n");
