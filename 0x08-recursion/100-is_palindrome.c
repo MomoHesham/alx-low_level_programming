@@ -14,7 +14,7 @@ int is_palrec(char *str, int l, int o)
 {
 	if (l == o)
 		return (1);
-	if (str[l] == str[o])
+	if (str[l] != str[o])
 		return (0);
 	if (l < o + 1)
 		return (is_palrec(str, l + 1, o - 1));
