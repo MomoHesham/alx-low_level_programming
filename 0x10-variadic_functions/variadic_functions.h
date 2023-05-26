@@ -9,10 +9,16 @@ void print_all(const char * const format, ...);
 
 int _putchar(char c);
 
+/**
+ * struct funckey - structure
+ * @f: functions that will be execute
+ * @spec: character
+ */
+
 typedef struct funckey
 {
 	void (*f)(va_list);
 	char spec;
-}funckey;
+} funckey;
 
 #endif /*VARIADIC_H */
